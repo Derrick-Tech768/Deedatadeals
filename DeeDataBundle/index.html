@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEE'S DATA DEALS - Buy Data Bundles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-decor"></div>
+    <div id="splash" class="splash-overlay">
+        <div class="splash-card">
+            <img src="DeeLogo.png.png" alt="Main Data Logo" class="splash-main-logo">
+            <p class="splash-subtitle">Fast, Reliable, Affordable Data Bundles</p>
+            <div class="splash-logos">
+                <img src="MTN.png" alt="MTN" class="splash-small-logo">
+                <img src="Tele.png" alt="Telecel" class="splash-small-logo">
+                <img src="AirtelTigo.png" alt="AirtelTigo" class="splash-small-logo">
+                <img src="Affiliate.png" alt="Affiliate" class="splash-small-logo">
+            </div>
+        </div>
+    </div>
+    <div id="app" class="app-hidden">
+        <div class="container">
+            <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                   <img src="DeeLogo.png.png" alt="Dee's Logo" class="dee-logo">
+                </div>
+                <div class="header-text">
+                    <h1>DEE'S <span class="highlight-text">DATA DEALS</span></h1>
+                    <p>Fast, Reliable, Affordable Data Bundles</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Form Section (Left Side) -->
+            <section class="form-section">
+                <div class="card form-card">
+                    <!-- ===== SECTION 1: PAYMENT FORM ===== -->
+                    <div id="paymentSection">
+                        <h2>Get Your Data Bundle</h2>
+                        
+                        <!-- Step 1: Network Selection -->
+                        <div class="form-group">
+                            <label for="network" class="step-label">Step 1: Select Network</label>
+                            <div class="input-group">
+                                <span class="input-icon">📡</span>
+                                <select id="network" class="input-field">
+                                    <option value="">Choose a network...</option>
+                                    <option value="MTN">MTN</option>
+                                    <option value="AirtelTigo">AirtelTigo</option>
+                                    <option value="Telecel">Telecel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Bundle Selection -->
+                        <div class="form-group">
+                            <label for="bundle" class="step-label">Step 2: Select Bundle</label>
+                            <div class="input-group">
+                                <span class="input-icon">📦</span>
+                                <select id="bundle" class="input-field" disabled>
+                                    <option value="">Select a bundle...</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Email Address -->
+                        <div class="form-group">
+                            <label for="email" class="step-label">Step 3: Email Address</label>
+                            <div class="input-group">
+                                <span class="input-icon">✉️</span>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    class="input-field" 
+                                    placeholder="Optional"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Recipient Phone Number -->
+                        <div class="form-group">
+                            <label for="recipient" class="step-label">Step 4: Recipient Phone Number</label>
+                            <div class="input-group">
+                                <span class="input-icon">📱</span>
+                                <input 
+                                    type="tel" 
+                                    id="recipient" 
+                                    class="input-field" 
+                                    placeholder="e.g. 0551234567"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accountName" class="step-label">Mobile Money/Bank Account Name</label>
+                            <div class="input-group">
+                                <span class="input-icon">👤</span>
+                                <input
+                                    type="text"
+                                    id="accountName"
+                                    class="input-field"
+                                    placeholder="e.g., John Kwame Mensah"
+                                    required
+                                >
+                            </div>
+                            <p class="helper-text">This helps us identify your payment and process refunds if needed</p>
+                        </div>
+
+                        <!-- Selected Plan Summary -->
+                        <div id="plan-summary" class="plan-summary hidden">
+                            <h3>Selected Plan</h3>
+                            <div class="summary-item">
+                                <span>Network:</span>
+                                <span id="summary-network">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Bundle:</span>
+                                <span id="summary-bundle">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Amount:</span>
+                                <span id="summary-amount">-</span>
+                            </div>
+                        </div>
+
+                        <button id="pay-btn" class="btn btn-primary" disabled>
+                            PLACE ORDER
+                        </button>
+                        <p class="validation-message hidden" id="validation-msg"></p>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bundle Display Section (Right Side) -->
+            <section class="bundles-section">
+                <div class="card bundles-card">
+                    <div class="bundles-header">
+                        <img id="network-logo" src="" alt="Network Logo" class="network-logo hidden">
+                        <h2 id="bundles-title">Select a network to see bundles</h2>
+                    </div>
+                    <div id="bundles-container" class="bundles-grid">
+                        <!-- Bundles will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Affiliate Marketing Section -->
+        <section class="affiliate-section">
+            <div class="affiliate-card">
+                <div class="affiliate-header">
+                    <div class="affiliate-badge">
+                        <img src="Affiliate.png" alt="Affiliate Edge" class="affiliate-badge-img">
+                    </div>
+                    <div>
+                        <h2>Learn Affiliate Marketing</h2>
+                    </div>
+                </div>
+                <p class="affiliate-copy">Join our growing communities to become a partner!</p>
+                <p class="affiliate-copy">We always keep you updated</p>
+                <div class="affiliate-actions">
+                    <a href="https://whatsapp.com/channel/0029VbBwispISTkPPvzLum1z" target="_blank" class="btn btn-whatsapp-channel">
+                        <img src="whatsapp.png" alt="WhatsApp logo" class="btn-icon">
+                        Join our WhatsApp Channel
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VbBwispISTkPPvzLum1z" target="_blank" class="btn btn-affiliate btn-affiliate-small">
+                        Become An Affiliate
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/233546097072" class="whatsapp-btn" target="_blank" title="Chat with us on WhatsApp">
+        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-btn-img">
+    </a>
+
+    <!-- Paystack Script -->
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

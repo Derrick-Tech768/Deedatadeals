@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Money Top-Up</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="topup-cta-panel" aria-label="Payment options">
+      <p class="topup-cta-copy">Choose how to complete your payment</p>
+      <button type="button" class="btn btn-primary" id="paystack-btn">PAY WITH PAYSTACK</button>
+      <button type="button" class="btn btn-secondary" id="momo-btn">PAY WITH MOMO</button>
+      <p class="topup-cta-note">If you are facing challenges using paystack, pay with momo.</p>
+      <div class="order-summary-card hidden" id="order-summary-card">
+        <h2>Order Summary</h2>
+        <div class="summary-item"><span>Network</span><span id="order-network">-</span></div>
+        <div class="summary-item"><span>Bundle</span><span id="order-bundle">-</span></div>
+        <div class="summary-item"><span>Amount</span><span id="order-amount">-</span></div>
+        <div class="summary-item"><span>Recipient</span><span id="order-recipient">-</span></div>
+        <div class="summary-item"><span>Account Name</span><span id="order-account">-</span></div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="header-content">
+        <div class="logo-section">
+          <img src="DeeLogo.png.png" alt="Dee's Logo" class="dee-logo" />
+        </div>
+        <div class="header-text">
+          <h1>Mobile Money <span class="highlight-text">Top-Up</span></h1>
+          <p>Manual MoMo top-up requests for wallet funding</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="form-section">
+        <div class="card form-card">
+          <div class="payment-options" style="display:grid; gap:14px; margin-bottom:16px;">
+            <div class="payment-option-card active" style="padding:16px; border-radius:16px; border:1px solid rgba(255,255,255,0.14); background:linear-gradient(135deg, rgba(255,193,7,0.18), rgba(255,255,255,0.04));">
+              <strong>Mobile Money Wallet</strong>
+              <p style="margin:8px 0 0; color:#f8fafc;">Use the manual wallet top-up process below.</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="step-label">MoMo payment details</label>
+            <div class="plan-summary">
+              <div class="summary-item"><span>Number</span><span id="momo-number">Loading...</span></div>
+              <div class="summary-item"><span>Name</span><span id="momo-name">Loading...</span></div>
+              <div class="summary-item"><span>Network</span><span id="momo-network">Loading...</span></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="step-label">How to complete your top-up</label>
+            <div class="plan-summary">
+              <ol style="margin:0; padding-left:18px; color:#cbd5e1; line-height:1.8;">
+                <li>Send MoMo to the number shown above.</li>
+                <li>Use your Momo Account Name as the payment reference.</li>
+                <li>Submit the form below to complete.</li>
+              </ol>
+              <p style="margin-top:14px; padding:14px; border-radius:14px; background:rgba(248,113,113,0.12); color:#fecaca; border:1px solid rgba(251,191,36,0.2);">
+                <strong>Note:</strong> Your order will only be processed once we receive your payment. Thank you for choosing Dee's Data Deals!
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <button type="button" class="btn btn-primary" id="okay-btn">Done</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="topup.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - DEE'S DATA DEALS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="Deelogo.png" alt="Dee's Logo" class="dee-logo">
+                </div>
+                <div class="header-text">
+                    <h1>DEE'S DATA DEALS</h1>
+                    <p>Order Confirmation</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content confirmation-page">
+            <section class="form-section full-width">
+                <div class="card form-card">
+                    <div class="payment-success-banner">
+                        <h3>✅ Payment Successful!</h3>
+                        <p>Now enter the recipient phone number to complete your order</p>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary-section">
+                        <h3>Order Summary</h3>
+                        <div class="summary-item">
+                            <span>Network:</span>
+                            <span id="confirm-network">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Bundle:</span>
+                            <span id="confirm-bundle">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Amount:</span>
+                            <span id="confirm-amount">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Email:</span>
+                            <span id="confirm-email">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Account Name:</span>
+                            <span id="confirm-account-name">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Recipient:</span>
+                            <span id="confirm-recipient">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Recipient Number Input -->
+                    <div class="form-group">
+                        <label for="recipient" class="step-label">Recipient Phone Number</label>
+                        <input 
+                            type="tel" 
+                            id="recipient" 
+                            class="input-field" 
+                            placeholder="Enter phone number to receive data"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accountName" class="step-label">Mobile Money/Bank Account Name</label>
+                        <input
+                            type="text"
+                            id="accountName"
+                            class="input-field"
+                            placeholder="e.g., John Kwame Mensah"
+                            required
+                        >
+                        <p class="helper-text">This helps us identify your payment and process refunds if needed</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button id="submit-btn" class="btn btn-primary" style="display: block; width: 100%; margin-top: 20px; font-size: 1.1rem; padding: 16px;">
+                        ✓ Submit Order
+                    </button>
+                    <p class="validation-message hidden" id="validation-msg"></p>
+                    <p class="loading-message hidden" id="loading-msg"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://whatsapp.com/channel/0029VbC75Do4Crfr8PhXm41C" target="_blank" class="whatsapp-btn" title="Chat with us on WhatsApp">
+        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-btn-img">
+    </a>
+
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="confirm.js"></script>
+</body>
+</html>
